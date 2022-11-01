@@ -6,20 +6,18 @@
 /*   By: yrhiba <yrhiba@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 21:08:14 by yrhiba            #+#    #+#             */
-/*   Updated: 2022/10/12 01:54:37 by yrhiba           ###   ########.fr       */
+/*   Updated: 2022/11/01 01:35:16 by yrhiba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	ft_nlen(int n)
+static size_t	ft_nlen(long n)
 {
 	size_t	nlen;
 
 	nlen = 0;
-	if (n == -2147483648)
-		return (11);
-	else if (n < 0)
+	if (n < 0)
 	{
 		nlen++;
 		n = -n;
@@ -32,7 +30,7 @@ static size_t	ft_nlen(int n)
 	return (nlen);
 }
 
-static char	*ft_crtn(int n, size_t len, char *rtn)
+static char	*ft_crtn(long n, size_t len, char *rtn)
 {
 	while (n > 0)
 	{
@@ -42,26 +40,23 @@ static char	*ft_crtn(int n, size_t len, char *rtn)
 	return (rtn);
 }
 
-char	*ft_itoa(int n)
+char	*ft_itoa(int nbr)
 {
 	char	*rtn;
 	size_t	len;
-	size_t	k;
+	long	n;
 
-	if (n == -2147483648)
-		return (ft_strdup("-2147483648"));
-	else if (n == 0)
+	n = nbr;
+	if (n == 0)
 		return (ft_strdup("0"));
 	len = ft_nlen(n);
 	rtn = (char *)malloc(sizeof(char) * (len + 1));
 	if (!rtn)
 		return (0);
-	k = 0;
 	if (n < 0)
 	{
 		n = -n;
 		rtn[0] = '-';
-		k = 1;
 	}
 	rtn[len--] = '\0';
 	rtn = ft_crtn(n, len, rtn);
