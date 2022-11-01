@@ -6,7 +6,7 @@
 /*   By: yrhiba <yrhiba@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 11:47:55 by yrhiba            #+#    #+#             */
-/*   Updated: 2022/10/13 16:49:08 by yrhiba           ###   ########.fr       */
+/*   Updated: 2022/10/12 01:43:34 by yrhiba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,17 +104,4 @@ char	**ft_split(char const *s, char c)
 	slen = ft_strlen(s);
 	rtn = ft_doit(rtn, s, slen, c);
 	return (rtn);
-}
-
-#include <stdio.h>
-int main()
-{
-	const char *s = " ";
-	char **dh = ft_split(s, ' ');
-	int i = 0;
-	while (dh[i])
-	{
-		printf("%s\n", dh[i++]);
-	}
-	return (0);
 }
