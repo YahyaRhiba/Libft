@@ -6,7 +6,7 @@
 /*   By: yrhiba <yrhiba@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 13:27:20 by yrhiba            #+#    #+#             */
-/*   Updated: 2022/10/09 08:20:35 by yrhiba           ###   ########.fr       */
+/*   Updated: 2022/11/01 01:23:15 by yrhiba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (!rtn)
 		return (0);
 	i = 0;
-	while (i < len)
+	while (i < len && s[i + start])
 	{
 		rtn[i] = s[i + start];
 		i++;
